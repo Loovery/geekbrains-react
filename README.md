@@ -1,6 +1,6 @@
 # Практическая часть, курс ReactJS (geekbrainds.ru) 
 
-#### [Урок 1. Введение в ReactJS современный Javascript](geekbrains-react/pull/1)
+#### [Урок 1. Введение в ReactJS современный Javascript](./../../pull/1/files)
 1. Установить node и npm.
 2. Создать проект и настроить package.json.
 3. Настроить webpack.config.
