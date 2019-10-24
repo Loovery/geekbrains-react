@@ -4,7 +4,7 @@
  * https://t.me/loovery
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class App extends Component {
   constructor(props) {
@@ -13,6 +13,6 @@ export default class App extends Component {
   }
 
   render() {
-    return <></>
+    return <></>;
   }
 }
