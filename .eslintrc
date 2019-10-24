@@ -9,22 +9,18 @@
       }
     }
   },
-
   "extends": [
     "airbnb",
     "plugin:jsx-control-statements/recommended",
     "plugin:react/recommended"
   ],
-
   "env": {
     "browser": true
   },
-
   "globals": {
     "componentHandler": true,
     "Promise": true
   },
-
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -32,7 +28,6 @@
       "jsx": true
     }
   },
-
   "rules": {
     "quotes": [1, "single"],
     "eqeqeq": 2,
@@ -56,12 +51,9 @@
     "react/jsx-no-undef": [2, { "allowGlobals": true }],
     "jsx-control-statements/jsx-use-if-tag": 0,
     "import/no-extraneous-dependencies": ["error", {"packageDir": "./"}],
-
     "max-len": [0, 90, { "ignoreComments": true }],
-//    "camelcase": [0, {"properties": "always"}],
     "no-underscore-dangle": 0
   },
-
   "plugins": [
     "react",
     "jsx-a11y",
