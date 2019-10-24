@@ -1,14 +1,14 @@
 {
-  "name": "geekbrains",
+  "name": "geekbrains-reactjs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Практическая часть, курс ReactJS (geekbrainds.ru)",
+  "main": "index.html",
   "scripts": {
     "build": "webpack --mode development --watch",
     "serve": "webpack-dev-server --open"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Grigorii K.",
+  "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
