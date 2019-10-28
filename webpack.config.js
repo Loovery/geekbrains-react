@@ -2,22 +2,22 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './static_src/index.jsx',
+    app: './src/index.jsx',
   },
   output: {
-    path: path.resolve(__dirname, 'static/build'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'app.js',
-    publicPath: 'static/build/',
+    publicPath: 'build/',
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'static_src'), 'node_modules'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['.jsx', '.js'],
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, 'static_src'),
+        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: [
           {
