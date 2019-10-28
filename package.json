@@ -1,7 +1,7 @@
 {
   "name": "geekbrains-reactjs",
   "version": "1.0.0",
-  "description": "Практическая часть, курс ReactJS (geekbrainds.ru)",
+  "description": "РџСЂР°РєС‚РёС‡РµСЃРєРёР№ РєСѓСЂСЃ РїРѕ ReactJS (geekbrains.ru)",
   "main": "index.html",
   "scripts": {
     "build": "webpack --mode development --watch",
