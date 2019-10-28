@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import './css/styles.css';
 import MessageField from './Components/MessageField';
 
 export default class App extends Component {
