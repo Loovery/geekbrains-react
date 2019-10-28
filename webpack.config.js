@@ -5,9 +5,9 @@ module.exports = {
     app: './src/index.jsx',
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'static/build'),
     filename: 'app.js',
-    publicPath: 'build/',
+    publicPath: 'static/build/',
   },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
