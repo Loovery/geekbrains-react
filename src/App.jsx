@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import MessageField from './Components/MessageField';
 
 export default class App extends Component {
   constructor(props) {
@@ -13,6 +14,6 @@ export default class App extends Component {
   }
 
   render() {
-    return <></>;
+    return <MessageField />;
   }
 }
