@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import './css/styles.css';
-import MessageField from './Components/MessageField';
+import ChatLayout from './Components/ChatLayout';
 
 export default class App extends Component {
   constructor(props) {
@@ -15,6 +15,8 @@ export default class App extends Component {
   }
 
   render() {
-    return <MessageField />;
+    return (
+      <ChatLayout />
+    );
   }
 }
