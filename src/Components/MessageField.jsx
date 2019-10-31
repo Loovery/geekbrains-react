@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 import Message from './Message';
 import { uuid, botPhrases } from '../utils';
 
@@ -13,6 +14,11 @@ export default class MessageField extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      chats: {
+        1: { title: 'Чат 1', messageList: [1] },
+        2: { title: 'Чат 2', messageList: [2] },
+        3: { title: 'Чат 3', messageList: [] },
+      },
       messages: [
         {
           id: uuid(),
@@ -66,12 +72,16 @@ export default class MessageField extends Component {
 
   sendMessage(text, sender) {
     if (text.length > 0) {
-      const { messages } = this.state;
-      this.setState({
-        messages: [...messages, { id: uuid(), text, sender }],
-      });
+      const { messages, chats } = this.state;
+      const { chatId } = this.props;
 
+      const messageId = Object.keys(messages).length + 1;
+      this.setState({
+        messages: { ...messages, [messageId]: { id: uuid(), text, sender } },
+        chats: { ...chats, [chatId]: { ...chats[chatId], messageList: [...chats[chatId].messageList, messageId] } },
+      });
       this.setState({ textFieldValue: '' });
+
       const chatWindow = this.chatWindow.current;
       setTimeout(() => {
         chatWindow.scrollTop = chatWindow.scrollHeight;
@@ -91,8 +101,13 @@ export default class MessageField extends Component {
   }
 
   render() {
-    const { messages } = this.state;
-    const messageElements = messages.map(message => <Message key={message.id} message={message} />);
+    const { messages, chats } = this.state;
+    const { chatId } = this.props;
+
+    const messageElements = chats[chatId].messageList.map(messageId => {
+      return <Message key={messages[messageId].message.id} message={messages[messageId].message} />
+    });
+
     return (
       <>
         <div className="message-field" ref={this.chatWindow}>{ messageElements }</div>
@@ -113,3 +128,7 @@ export default class MessageField extends Component {
     );
   }
 }
+
+MessageField.propTypes = {
+  chatId: PropTypes.number.isRequired,
+};

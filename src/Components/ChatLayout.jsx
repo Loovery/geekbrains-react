@@ -8,6 +8,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
+import PropTypes from 'prop-types';
 import MessageField from './MessageField';
 import ChatList from './ChatList';
 
@@ -46,4 +47,12 @@ export default () => {
       </Grid>
     </>
   );
+};
+
+MessageField.propTypes = {
+  chatId: PropTypes.number,
+};
+
+MessageField.defaultProps = {
+  chatId: 1,
 };

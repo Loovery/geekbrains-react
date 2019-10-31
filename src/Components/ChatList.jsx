@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -37,6 +38,18 @@ export default function CheckboxListSecondary() {
           </ListItem>
         );
       })}
+
+      <List>
+        <Link to="/chat/1/">
+          <ListItem primaryText="Chat 1" />
+        </Link>
+        <Link to="/chat/2/">
+          <ListItem primaryText="Chat 2" />
+        </Link>
+        <Link to="/chat/3/">
+          <ListItem primaryText="Chat 3" />
+        </Link>
+      </List>
     </List>
   );
 }
