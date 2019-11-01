@@ -15,8 +15,8 @@ export default class MessageField extends Component {
     super(props);
     this.state = {
       chats: {
-        1: { title: 'Чат 1', messageList: [1] },
-        2: { title: 'Чат 2', messageList: [2] },
+        1: { title: 'Чат 1', messageList: [0,1] },
+        2: { title: 'Чат 2', messageList: [] },
         3: { title: 'Чат 3', messageList: [] },
       },
       messages: [
@@ -105,7 +105,7 @@ export default class MessageField extends Component {
     const { chatId } = this.props;
 
     const messageElements = chats[chatId].messageList.map(messageId => {
-      return <Message key={messages[messageId].message.id} message={messages[messageId].message} />
+      return <Message key={messages[messageId].id} message={messages[messageId]} />
     });
 
     return (
