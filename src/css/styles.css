@@ -100,3 +100,38 @@ input[type='text'] {
     color: #7ba3cd;
 }
 
+.grid-container {
+    height: 100vh;
+}
+
+.chatList {
+    background-color: #182633;
+    border-right: 1px solid #0e1622;
+}
+
+.messageField {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr 36px;
+}
+
+.chatList {
+    width: 100%;
+    color: #e4eaf1;
+}
+
+.listItemChat:hover {
+    background-color: #3d4044;
+}
+.listItemChat {
+    white-space: nowrap;
+}
+
+.listItemChatLink {
+    text-decoration: none;
+    color: white;
+}
+
+.add-new-chat {
+    padding: 0 !important;
+}
