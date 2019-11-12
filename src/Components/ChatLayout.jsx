@@ -38,7 +38,6 @@ export default class ChatLayout extends Component {
     };
 
     this.chatWindow = React.createRef();
-    this.addChat.bind(this);
   }
 
   sendMessage(text, sender) {
@@ -66,12 +65,10 @@ export default class ChatLayout extends Component {
   addChat(title) {
     const { chats } = this.state;
 
-    const chatId = Object.keys(chats).length + 1;
+    chats.push({ title, messageList: [] });
+
     this.setState({
-      chats: {
-        ...chats,
-        [chatId]: { title, messageList: [] },
-      },
+      chats: [...chats],
     });
   }
 
@@ -83,7 +80,7 @@ export default class ChatLayout extends Component {
       <Grid className="grid-container" container alignItems="stretch">
         <Hidden only={['xs', 'sm']}>
           <Grid className="chatList" item xs={3}>
-            <ChatList chats={chats} addChat={this.addChat} />
+            <ChatList chats={chats} addChat={this.addChat.bind(this)} />
           </Grid>
         </Hidden>
         <Grid className="messageField" item xs>
