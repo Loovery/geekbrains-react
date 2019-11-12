@@ -4,7 +4,14 @@ import { ADD_CHAT } from '../Actions/chatActions';
 
 const initialStore = {
   chats: [
-    { title: 'Чат 1', messageList: [1] },
+    {
+      title: 'Ivan Makeev',
+      messageList: [0],
+    },
+    {
+      title: 'Корепанов Григорий',
+      messageList: [1],
+    },
   ],
 };
 
@@ -15,7 +22,7 @@ export default (store = initialStore, action) => {
       chats: {
         $merge: {
           [action.chatId]: {
-            title: store.chats[action.chatId].title,
+            ...store.chats[action.chatId],
             messageList: [...store.chats[action.chatId].messageList, action.messageId],
           },
         },
@@ -23,14 +30,9 @@ export default (store = initialStore, action) => {
     });
   }
   case ADD_CHAT: {
-    const chatId = Object.keys(store.chats).length + 1;
     return update(store, {
       chats: {
-        $merge: {
-          [chatId]: {
-            title: action.title, messageList: [],
-          },
-        },
+        $push: [{ title: action.title, messageList: [] }],
       },
     });
   }

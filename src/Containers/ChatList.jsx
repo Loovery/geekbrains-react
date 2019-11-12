@@ -5,15 +5,17 @@
  */
 
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {bindActionCreators} from "redux";
+import connect from "react-redux/es/connect/connect";
 import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
+import { addChat } from '../Actions/chatActions';
 
-export default class ChatList extends Component {
+class ChatList extends Component {
   constructor(props) {
     super(props);
 
@@ -81,10 +83,17 @@ export default class ChatList extends Component {
 
 ChatList.propTypes = {
   chats: PropTypes.array,
-  // eslint-disable-next-line react/require-default-props,react/no-unused-prop-types
   addChat: PropTypes.func,
 };
 
 ChatList.defaultTypes = {
   chats: [],
 };
+
+const mapStateToProps = ({ chatReducer }) => ({
+  chats: chatReducer.chats,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({ addChat }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatList);
