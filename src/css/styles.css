@@ -96,3 +96,18 @@ input[type='text'] {
 .add-new-chat {
     padding: 0 !important;
 }
+
+.grid-container {
+    height: 100vh;
+}
+
+.chatList {
+    background-color: #182633;
+    border-right: 1px solid #0e1622;
+}
+
+.messageField {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr 36px;
+}
