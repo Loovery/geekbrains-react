@@ -5,11 +5,11 @@
  */
 
 import botPhrases from './botPhrases';
-import uuid from './uuid';
 import timeIsNow from './timeIsNow';
+import store from './store';
 
 export {
   botPhrases,
-  uuid,
   timeIsNow,
+  store,
 };
